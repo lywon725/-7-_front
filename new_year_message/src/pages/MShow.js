@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components';
+import * as S from '../styles/Majorcss';
+
 
 const Text = styled.h1`
 position: left;
@@ -19,7 +21,7 @@ padding-left: 26px;
 function MCheck() {
     return (
         <>
-        <Text>메시지 보기</Text>
+        <S.Text>메시지 보기</S.Text>
 
         </>
     )
