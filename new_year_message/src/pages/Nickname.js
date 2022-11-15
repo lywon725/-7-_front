@@ -27,6 +27,7 @@ height: 50px;
 position: fixed;
 bottom: 0;
 margin-bottom: 100px;
+margin-left: 18px;
 
 //텍스트
 font-family: 'Pretendard';
