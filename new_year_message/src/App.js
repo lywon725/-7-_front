@@ -1,4 +1,3 @@
-import { GlobalStyle } from './styles/GlobalStyle';
 import { Routes, Route } from 'react-router-dom';
 
 import Mainpage from './pages/Mainpage';
@@ -14,7 +13,6 @@ import MShow from './pages/MShow';
 function App() {
   return (
     <>
-    <GlobalStyle />
     <Routes>
           <Route index element={<Mainpage />} />
           <Route path='nickname' element={<Nickname />} />
@@ -25,7 +23,8 @@ function App() {
           <Route path='complete' element={<Complete/>}/>
           <Route path='MCheck' element={<MCheck/>}/>
           <Route path='MShow' element={<MShow/>}/>
-    </Routes>    </>
+    </Routes>    
+    </>
   );
 }
 

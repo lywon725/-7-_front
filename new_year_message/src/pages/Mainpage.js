@@ -27,7 +27,7 @@ height: 50px;
 position: fixed;
 bottom: 0;
 margin-bottom: 100px;
-
+margin-left: 18px;
 //텍스트
 font-family: 'Pretendard';
 font-style: normal;
@@ -37,6 +37,7 @@ line-height: 12px;
 color: #8571FF;
 
 `
+
 function Mainpage() {
     return (
         <>
@@ -45,7 +46,8 @@ function Mainpage() {
             <br/>응원의 메시지를 
             <br/>작성해주세요 🍀
         </Text>
-        <BigButton onClick={() => (window.location.href = '/nickname')}>작성하러 가기</BigButton>        </>
+        <BigButton onClick={() => (window.location.href = '/nickname')}>작성하러 가기</BigButton>        
+        </>
     )
 }
 
