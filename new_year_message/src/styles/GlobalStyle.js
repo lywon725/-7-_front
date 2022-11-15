@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     @media only screen and (min-width: 375px) {
         body {
+            display: flex;
             background-color: #F2F0F5;
         }
         .App {
