@@ -25,7 +25,7 @@ border-radius: 18px;
 
 width: 350px;
 height: 50px;
-margin-top: 450px;
+margin-top: 500px;
 position: flex;
 bottom: 0;
 margin-bottom: 10px;
