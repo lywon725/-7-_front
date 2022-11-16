@@ -14,16 +14,33 @@ let user = createSlice({
     ,
     //변경, 추가하는 함수 
     reducers :{
-        addUser(state, action){
+        ChangeState(state, action){
+            state.is_done= false;
+        },
+        addNickname(state, action){
             state.nickname = action.payload
             state.is_done= true;
-            //console.log();
-            // state.push(action.payload)
+        },
+        addTitle(state, action){
+            state.title = action.payload
+            state.is_done= true;
+        },
+        addCategory(state, action){
+            state.category = action.payload
+            state.is_done= true;
+        },
+        addText(state, action){
+            state.text = action.payload
+            state.is_done= true;
+        },
+        addEmail(state, action){
+            state.email = action.payload
+            state.is_done= true;
         }
     }
 })
 
-export let {addUser} = user.actions
+export let {ChangeState,addNickname, addTitle, addCategory, addText, addEmail} = user.actions
 
 //reducer 등록
 export default configureStore({
