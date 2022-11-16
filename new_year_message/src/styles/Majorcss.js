@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Text = styled.h1`
 position: left;
+text-align: left;
+margin-left: 80px;
 font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
@@ -20,12 +22,13 @@ border: 1px solid #B9ADFF;
 box-shadow: 0px 0px 15px rgba(106, 138, 255, 0.1);
 border-radius: 18px;
 
-width: 90%;
+width: 400px;
 height: 50px;
-position: fixed;
+margin-top: 50px;
+position: relative;
 bottom: 0;
 margin-bottom: 100px;
-margin-left: 18px;
+display: inline-block;
 
 //텍스트
 font-family: 'Pretendard';
