@@ -20,10 +20,10 @@ padding-left: 26px;
 `
 function MCheck() {
     return (
-        <>
+        <S.Wrapper>
         <S.Text>메시지 보기</S.Text>
 
-        </>
+        </S.Wrapper>
     )
 }
 
