@@ -41,7 +41,7 @@ color: #8571FF;
 
 `
 export const Put = styled.input`
-    width: 30%;
+    width: 80%;
     height: 5%;
     position: absolute;
     margin-left: 24px;
