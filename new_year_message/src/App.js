@@ -1,5 +1,6 @@
 import { Outlet, Routes, Route } from 'react-router-dom';
 
+
 import Mainpage from './pages/Mainpage';
 import Nickname from './pages/Nickname';
 import Title from './pages/Title';
