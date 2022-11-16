@@ -9,7 +9,8 @@ let user = createSlice({
             title: 'happy new year!',
             category:'응원',
             text:'모두 행복했으면 좋겠어요.',
-            email: '123@gamail.com'
+            email: '123@gamail.com',
+            something: ' '
         }
     ,
     //변경, 추가하는 함수 
@@ -36,11 +37,16 @@ let user = createSlice({
         addEmail(state, action){
             state.email = action.payload
             state.is_done= true;
+        },
+        addNULL(state, action){
+            state.something = action.payload
+            state.is_done= true;
+
         }
     }
 })
 
-export let {ChangeState,addNickname, addTitle, addCategory, addText, addEmail} = user.actions
+export let {ChangeState,addNickname, addTitle, addCategory, addText, addEmail, addNULL} = user.actions
 
 //reducer 등록
 export default configureStore({
