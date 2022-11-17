@@ -29,7 +29,7 @@ function Mainpage() {
         <input type="text" class ="category" placeholder='카테고리'onClick={() => setModalIsOpen(true)}/>
         <S.InputLine/>
         <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} 
-         style={{
+        style={{
             overlay: {
             position: "fixed",
             backgroundColor: "rgba(15, 15, 15, 0.79)",

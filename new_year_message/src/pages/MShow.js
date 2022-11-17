@@ -6,6 +6,9 @@ import MessgaeCard_Left from '../components/Message/MessgaeCard_Left';
 import MessgaeCard_Right from '../components/Message/MessgaeCard_Right';
 import DumyArrray from '../components/Message/DumyArray';
 import {useSelector, useDispatch} from "react-redux"
+import Snowman from '../img/Snowman.png';
+//스크롤
+import { useInView } from "react-intersection-observer"
 
 const Box = styled.div`
 background: #FFFFFF;
@@ -43,6 +46,11 @@ color: #4B4B4B;
 margin-top: 10px;
 padding-left: 15px;
 
+`
+const Img = styled.img`
+width: 200px;
+position: absolute;
+left: 0%;
 `
 
 const MessageArray = [
@@ -164,6 +172,7 @@ function MCheck() {
                 }
                 
             })}
+            <Img src={Snowman}/>
         </S.Wrapper>
     ):(
         <>

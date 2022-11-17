@@ -65,8 +65,7 @@ margin-top: 100px;
 
 export const Wrapper = styled.div`
 width: 400px;
-height: 1200px;
-overflow: hidden;
+overflow: visible;
 text-align: center;
 position: absolute;
 left: 50%;
