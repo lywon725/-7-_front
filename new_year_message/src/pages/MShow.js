@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
 import * as S from '../styles/Majorcss';
-
+import MessgaeCard_Left from '../components/Message/MessgaeCard_Left';
 import {useSelector, useDispatch} from "react-redux"
 
 const Box = styled.div`
@@ -43,18 +43,35 @@ padding-left: 15px;
 `
 
 function MCheck() {
+    //리덕스에 있는 state 가져오기
     let a = useSelector((state) => { return state.user } )
-    return (
-        <S.Wrapper>
-        {console.log(a)}
 
-        <S.Text>메시지 보기</S.Text>
-        <Box>
-        <Content>{a.text}</Content>
-        <Writer>작성자:{a.nickname}</Writer>
-        </Box>
+    //[목표] 오늘이 1.1일 이후면 true보여주기 아니면 안보여주기
+    const [isNewYear, setNewYear] = useState(true);
+    //오늘 날짜 할당
+    const day = new Date();     
+    const todate = day.getDate();
+    //todate == 1 ? setNewYear(true) : setNewYear(false);
+    console.log(todate);
+
+    //api 가져오기 
+    const [messages, setMessages] = useState([]);
+
+    return isNewYear ? (
+        <S.Wrapper>
+            {console.log(a)}
+
+            <S.Text>메시지 보기</S.Text>
+            <MessgaeCard_Left
+                text={a.text}
+                nickname={a.nickname}
+            />
         </S.Wrapper>
-    )
+    ):(
+        <>
+            <S.Text>아직 신년이 아니예요!</S.Text>
+        </>
+    );
 }
 
 export default MCheck

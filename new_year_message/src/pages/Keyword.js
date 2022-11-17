@@ -57,6 +57,12 @@ font-size: 12px;
 line-height: 13px;
 
 color: #4B4B4B;
+
+//커서 올렸을때 색상변화
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
 function Mainpage() {
     const [inputvalue, setinputvalue] = useState('')
