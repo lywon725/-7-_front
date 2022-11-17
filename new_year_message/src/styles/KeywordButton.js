@@ -11,6 +11,10 @@ top: 511px;
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
 export const KeywordBox2= styled.button`
 border: none;
@@ -23,6 +27,10 @@ top: 511px;
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
 export const KeywordBox3= styled.button`
 border: none;
@@ -35,6 +43,11 @@ top: 511px;
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
+
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
 export const KeywordBox4= styled.button`
 border: none;
@@ -47,6 +60,11 @@ top: 562px;
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
+
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
 export const KeywordBox5= styled.button`
 border: none;
@@ -59,6 +77,11 @@ top: 562px;
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
+
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
 export const KeywordBox6= styled.button`
 border: none;
@@ -72,6 +95,11 @@ background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
 
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
+
 `
 export const KeywordBox7= styled.button`
 border: none;
@@ -84,6 +112,10 @@ top: 613px;
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
 export const KeywordBox8= styled.button`
 border: none;
@@ -96,6 +128,10 @@ top: 613px;
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
 export const KeywordBox9= styled.button`
 border: none;
@@ -108,6 +144,10 @@ top: 613px;
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
 export const KeywordBox10= styled.button`
 border: none;
@@ -120,6 +160,10 @@ top: 664px;
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
 export const KeywordBox11= styled.button`
 border: none;
@@ -132,6 +176,10 @@ top: 664px;
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
 export const KeywordBox12= styled.button`
 border: none;
@@ -144,4 +192,8 @@ top: 664px;
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 15.6686px;
+&: hover{
+    background: #B9ADFF;
+    color:#FFFF;
+}
 `
