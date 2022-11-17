@@ -15,15 +15,16 @@ export const GlobalStyle = createGlobalStyle`
     body {
         width: 100%;
         display: center;
+        overflow: scroll;
     }
     @media only screen and (min-width: 375px) {
         body {
             background-color: #F2F0F5;
             display: flex;
+            overflow: scroll;
         }
         .App {
             width: 375px;
-            height: 100vh;
             color: #FFF;
             & > {
             float: left;
