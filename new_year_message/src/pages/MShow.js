@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
 import * as S from '../styles/Majorcss';
+
 import MessgaeCard_Left from '../components/Message/MessgaeCard_Left';
+import MessgaeCard_Right from '../components/Message/MessgaeCard_Right';
+import DumyArrray from '../components/Message/DumyArray';
 import {useSelector, useDispatch} from "react-redux"
 
 const Box = styled.div`
@@ -42,6 +45,87 @@ padding-left: 15px;
 
 `
 
+const MessageArray = [
+    {
+        id:1,
+        nickname:'철수',
+        text:'행복해지길 바래요.인생은 원래 행복할려고 사는거죠 긏쵸? 맞죠잉 우웅웅우우우우우웅웅웅웅웅우우우'
+    },
+    {
+        id:2,
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        id:3,
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        id:4,
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        id:5,
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        id:6,
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        id:7,
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        id:8,
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        id:9,
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    },
+    {
+        nickname:'철수',
+        text:'행복해지길 바래요.'
+    }
+
+]
+
 function MCheck() {
     //리덕스에 있는 state 가져오기
     let a = useSelector((state) => { return state.user } )
@@ -62,10 +146,24 @@ function MCheck() {
             {console.log(a)}
 
             <S.Text>메시지 보기</S.Text>
-            <MessgaeCard_Left
-                text={a.text}
-                nickname={a.nickname}
-            />
+            {MessageArray.map((dum)=>{
+                if(dum.id%2 == 1){
+                    return(
+                        <MessgaeCard_Left
+                        text={dum.text}
+                        nickname={dum.nickname}
+                        />
+                    );
+                }else {
+                    return(
+                        <MessgaeCard_Right
+                        text={dum.text}
+                        nickname={dum.nickname}
+                        />
+                    );
+                }
+                
+            })}
         </S.Wrapper>
     ):(
         <>
