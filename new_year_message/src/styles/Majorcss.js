@@ -4,7 +4,7 @@ export const Text = styled.h1`
 position: left;
 text-align: left;
 margin-left: 6px;
-margin-top: 120px;
+margin-top: 50px;
 font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
@@ -23,9 +23,9 @@ border: 1px solid #B9ADFF;
 box-shadow: 0px 0px 15px rgba(106, 138, 255, 0.1);
 border-radius: 18px;
 
-width: 350px;
+width: 300px;
 height: 50px;
-margin-top: 500px;
+margin-top: 400px;
 position: flex;
 bottom: 0;
 margin-bottom: 10px;
@@ -46,7 +46,7 @@ export const Put = styled.input`
     position: absolute;
     margin-left: 24px;
     left: 13px;
-    top: 270px;
+    top: 200px;
     border: none;
     background: transparent;
     font-size: 17px;
@@ -71,4 +71,17 @@ text-align: center;
 position: absolute;
 left: 50%;
 transform: translate(-50%);
+margin-top: ;
+`
+
+export const textP = styled.p`
+margin-top: -5px;
+display: inline-block;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 30px;
+letter-spacing: 0.035em;
+color: rgba(75, 75, 75, 1);
 `
