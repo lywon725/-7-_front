@@ -8,7 +8,7 @@ box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
 border-radius: 10px;
 width: 251px;
 //position: absolute;
-margin-left: 25px;
+margin-left: 120px;
 `
 const Content = styled.h3`
 font-family: 'Pretendard';
@@ -18,7 +18,7 @@ font-size: 14px;
 line-height: 20px;
 color: #8571FF;
 
-text-align: left;
+text-align: right;
 padding-left: 15px;
 padding-top: 15px;
 padding-right: 15px;
@@ -28,7 +28,7 @@ margin-bottom: 5px;
 
 const Writer = styled.h4`
 
-text-align: left;
+text-align: right;
 
 font-family: 'Pretendard';
 font-style: normal;
@@ -37,7 +37,7 @@ font-size: 12px;
 line-height: 13px;
 color: #4B4B4B;
 margin-top: 10px;
-padding-left: 15px;
+padding-right: 15px;
 padding-bottom: 15px;
 
 
