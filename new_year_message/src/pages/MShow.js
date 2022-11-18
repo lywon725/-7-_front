@@ -105,7 +105,7 @@ margin-top: 160px;
 `
 function MCheck() {
     //리덕스에 있는 state 가져오기
-    let a = useSelector((state) => { return state.user } )
+    let a = useSelector((state) => { return state.MData } )
 
     //[목표] 오늘이 1.1일 이후면 true보여주기 아니면 안보여주기
     const [isNewYear, setNewYear] = useState(true);
@@ -147,7 +147,9 @@ function MCheck() {
                     
                 </Filter>
             </TitleBox>
+            
             <Padding />
+
             {/* 연동하지 않고 필터 구현하려면 어떻게 해야하노...
             연동한다면 그냥 위에서 api가져올때 filter를 조건으로 달아서 가져오면 된다. */}
             {/* map함수 갯수를 세서 좌, 우 하나씩 카드보여주기 */}
@@ -157,7 +159,8 @@ function MCheck() {
             {/* 전체를 보여주려면 filter가 전체일때  */}
             {filter ==="전체" ? 
             <>
-            {MessageData.map((dum, i)=>{
+            {/* JSON데이터 일때는 a 말고 MessageData */}
+            {a.map((dum, i)=>{
                 if(i%2 == 0 ){
                     return(
                         <>
@@ -179,7 +182,7 @@ function MCheck() {
                 }
             })}
             </> : <>    
-            {MessageData.filter(m=>m.category === filter).map((dum, i)=>{
+            {a.filter(m=>m.category === filter).map((dum, i)=>{
                 if(i%2 == 0 ){
                     return(
                         <>

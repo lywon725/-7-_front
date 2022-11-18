@@ -38,14 +38,12 @@ font-weight: 700;
 font-size: 17px;
 line-height: 12px;
 color: #8571FF;
-
-
 `
 export const Put = styled.input`
     width: 80%;
     height: 5%;
     position: absolute;
-    margin-left: 29px;
+    margin-left: 35px;
     left: 13px;
     top: 200px;
     border: none;
