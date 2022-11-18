@@ -1,4 +1,5 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
+import { UNSAFE_DataRouterStateContext } from 'react-router-dom';
 
 let user = createSlice({
     name : 'user',
@@ -42,11 +43,18 @@ let user = createSlice({
             state.something = action.payload
             state.is_done= true;
 
+        },
+        plusText(state, action){
+            state.text = state.text + action.payload
+        },
+        resetText(  state, action){
+            state.text = ''
         }
+        
     }
 })
 
-export let {ChangeState,addNickname, addTitle, addCategory, addText, addEmail, addNULL} = user.actions
+export let {ChangeState,addNickname, addTitle, addCategory, addText, addEmail, addNULL, plusText, resetText} = user.actions
 
 let done
 let MData = createSlice({

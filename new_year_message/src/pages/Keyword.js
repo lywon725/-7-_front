@@ -5,7 +5,7 @@ import * as K from '../styles/KeywordButton';
 
 //리덕스
 import {useSelector, useDispatch} from "react-redux"
-import {addText, ChangeState} from '../redux/store'
+import {addText, ChangeState, plusText, resetText} from '../redux/store'
 import { Navigate } from "react-router-dom";
 
 //material UI
@@ -26,14 +26,16 @@ background: #F8F9FF;
 
 border: 1px solid #B9ADFF;
 border-radius: 17.5132px;
+z-index:0;
 `
-const Message = styled.input`
+const Message = styled.textarea`
 border: 0px;
 background: transparent;
-width: 80%;
-height: 20%;
-margin-left: 2px;
-margin-top: 24px;
+width: 90%;
+height: 70%;
+margin-left: 0px;
+margin-top: 35px;
+font-display: top;
 `
 
 const RePlay = styled.button`
@@ -69,6 +71,13 @@ color: #4B4B4B;
     color:#FFFF;
 }
 `
+const SelectText = styled.div`
+position: absolute;
+margin-top: 40px;
+width: 80%;
+margin-left: 32px;
+z-index: 3;
+`
 function Mainpage() {
     const [inputvalue, setinputvalue] = useState('')
     //리덕스
@@ -82,32 +91,38 @@ function Mainpage() {
 
     //keyword
     let [i, setIndex] = useState(0)
-    
+    const [text, setText] = useState('')
+    let message = ''
+    const MakeMessage = () => {
+        
+    }
     return (
         <S.Wrapper>
         <S.Text>키워드를 활용하여 <br/>메시지를 작성해주세요</S.Text>
         <TextBox>
             <Message value = {inputvalue} type="text" placeholder="메시지" onChange={(event)=>setinputvalue(event.target.value)}/>
+            <p> {message}</p>
         </TextBox>
-        <RandomButton>랜덤</RandomButton>
+
+        <RandomButton onClick={() => (dispatch(resetText('')))}>초기화</RandomButton>
         <RePlay onClick={()=>(setIndex(Math.floor(Math.random()*18)))}><ReplayIcon/></RePlay>
-        {console.log(i)}
-        <K.KeywordBox1>{Keyword[i].S}</K.KeywordBox1>
-        <K.KeywordBox2>{Keyword[i+1].S}</K.KeywordBox2>
-        <K.KeywordBox3>{Keyword[i+2].S}</K.KeywordBox3>
+        <K.KeywordBox1 onClick={()=>{dispatch(plusText(Keyword[i].S))}}>{Keyword[i].S}</K.KeywordBox1>
+        <K.KeywordBox2 onClick={()=>{dispatch(plusText(Keyword[i+1].S))}}>{Keyword[i+1].S}</K.KeywordBox2>
+        <K.KeywordBox3 onClick={()=>{dispatch(plusText(Keyword[i+2].S))}}>{Keyword[i+2].S}</K.KeywordBox3>
 
-        <K.KeywordBox4>{Keyword[i].V}</K.KeywordBox4>
-        <K.KeywordBox5>{Keyword[i+1].V}</K.KeywordBox5>
-        <K.KeywordBox6>{Keyword[i+2].V}</K.KeywordBox6>
+        <K.KeywordBox4 onClick={()=>{dispatch(plusText(Keyword[i].V))}}>{Keyword[i].V}</K.KeywordBox4>
+        <K.KeywordBox5 onClick={()=>{dispatch(plusText(Keyword[i+1].V))}}>{Keyword[i+1].V}</K.KeywordBox5>
+        <K.KeywordBox6 onClick={()=>{dispatch(plusText(Keyword[i+2].V))}}>{Keyword[i+2].V}</K.KeywordBox6>
 
-        <K.KeywordBox7>{Keyword[i].O}</K.KeywordBox7>
-        <K.KeywordBox8>{Keyword[i+1].O}</K.KeywordBox8>
-        <K.KeywordBox9>{Keyword[i+2].O}</K.KeywordBox9>
+        <K.KeywordBox7 onClick={()=>{dispatch(plusText(Keyword[i].O))}}>{Keyword[i].O}</K.KeywordBox7>
+        <K.KeywordBox8 onClick={()=>{dispatch(plusText(Keyword[i+1].O))}}>{Keyword[i+1].O}</K.KeywordBox8>
+        <K.KeywordBox9 onClick={()=>{dispatch(plusText(Keyword[i+2].O))}}>{Keyword[i+2].O}</K.KeywordBox9>
 
-        <K.KeywordBox10>{Keyword[i].A}</K.KeywordBox10>
-        <K.KeywordBox11>{Keyword[i+1].A}</K.KeywordBox11>
-        <K.KeywordBox12>{Keyword[i+2].A}</K.KeywordBox12>
+        <K.KeywordBox10 onClick={()=>{dispatch(plusText(Keyword[i].A))}}>{Keyword[i].A}</K.KeywordBox10>
+        <K.KeywordBox11 onClick={()=>{dispatch(plusText(Keyword[i+1].A))}}>{Keyword[i+1].A}</K.KeywordBox11>
+        <K.KeywordBox12 onClick={()=>{dispatch(plusText(Keyword[i+2].A))}}>{Keyword[i+2].A}</K.KeywordBox12>
 
+        <SelectText>{a.user.text}</SelectText>
         <S.BigButton onClick={() => (dispatch(addText(inputvalue)))}>다음</S.BigButton>
         {a.user.is_done && (<Navigate to="/email"/> )}  
         </S.Wrapper>
