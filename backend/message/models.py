@@ -12,10 +12,9 @@ class Category(models.Model):
 class Text(models.Model):
     nickname = models.CharField(max_length=10)
     title = models.CharField(max_length=30)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
     text = models.TextField()
-    email = models.EmailField()
-    created_at = models.DateTimeField(default=datetime.date.today, null=True)
+    email = models.CharField(max_length=30)
 
     def __str__(self):
         return self.nickname

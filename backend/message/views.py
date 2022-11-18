@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAdminUser
 # Create your views here.
 class TextCreate(generics.ListCreateAPIView):
     serializer_class = TextSerializer
-    queryset = Text.objects.all().order_by('created_at')
+    queryset = Text.objects.all()
 
 class CategoryCreate(generics.ListCreateAPIView):
     serializer_class = CategorySerializer
