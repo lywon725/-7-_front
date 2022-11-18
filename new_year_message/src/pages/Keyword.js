@@ -16,7 +16,7 @@ position: absolute;
 width: 332px;
 height: 162px;
 left: 29px;
-top: 252px;
+top: 160px;
 
 background: #F8F9FF;
 /* light purple */
@@ -36,7 +36,7 @@ margin-top: 24px;
 const RePlay = styled.div`
 position: absolute;
 left: 340px;
-top: 470px;
+top: 340px;
 `
 const RandomButton = styled.button`
 border: none;
@@ -44,7 +44,7 @@ position: absolute;
 width: 49px;
 height: 24px;
 left: 299px;
-top: 266px;
+top: 170px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
