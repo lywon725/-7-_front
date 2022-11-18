@@ -83,3 +83,16 @@ line-height: 30px;
 letter-spacing: 0.035em;
 color: rgba(75, 75, 75, 1);
 `
+export const li = styled.div`
+    text-align: left;
+    margin-left: 6px;
+    margin-bottom: 6px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(185, 173, 255, 1);
+    .li:horver  {color: red;};   
+    
+`

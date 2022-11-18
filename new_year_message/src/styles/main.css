@@ -63,6 +63,42 @@
 
 }
 
+.listTitle {
+    text-align: left;
+    margin-left: 6px;
+    margin-bottom: 20px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    color: #8571FF;
+    
+}
+
+.li {
+    text-align: left;
+    margin-left: 6px;
+    margin-bottom: 15px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(185, 173, 255, 1); 
+}
+
+.li:hover {
+    color: #8571FF;
+}
+
+.margin {
+    margin-top: 40px;
+}
+.ginger {
+    width: 111px;
+    margin-top: 80px;
+}
 
 @keyframes ani{
     0%{
