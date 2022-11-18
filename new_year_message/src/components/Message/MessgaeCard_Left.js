@@ -14,15 +14,16 @@ const Content = styled.h3`
 font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
-font-size: 14px;
+font-size: 12px;
 line-height: 20px;
 color: #8571FF;
 
 text-align: left;
 padding-left: 15px;
-padding-top: 15px;
 padding-right: 15px;
 margin-bottom: 5px;
+margin-top: 3px;
+
 
 `
 
@@ -39,14 +40,24 @@ color: #4B4B4B;
 margin-top: 10px;
 padding-left: 15px;
 padding-bottom: 15px;
-
-
 `
+const Title = styled.div`
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 20px;
+color: #8571FF;
 
-function MessgaeCard({text, nickname}) {
+text-align: left;
+padding-left: 15px;
+padding-top: 15px;
+padding-right: 15px;
+`
+function MessgaeCard({title,text, nickname}) {
     return (
         <>
         <Box>
+        <Title>{title}</Title>
         <Content>{text}</Content>
         <Writer>작성자:{nickname}</Writer>
         </Box>

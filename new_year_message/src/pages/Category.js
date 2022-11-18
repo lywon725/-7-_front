@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import styled from 'styled-components';
 import * as S from '../styles/Majorcss';
 //리덕스
@@ -8,6 +8,7 @@ import { Navigate } from "react-router-dom";
 //모달창
 import Modal from 'react-modal';
 import "../styles/main.css"
+
 
 
 
@@ -30,17 +31,21 @@ function Mainpage() {
         
     };
     
-    const selectList = document.querySelectorAll(".listcnt > div");     //선택한 카테고리 번호 구하기
-    selectList.forEach((el, index) => {             
-    el.onclick = () => {
-        const title = CATEGORIES[index].title;
-        const id = CATEGORIES[index].id;
-        document.querySelector(".category").placeholder =  title;
-
-        console.log(title);
-    }
-    });
-
+    
+    
+    const select = () => {
+        const selectList = document.querySelectorAll(".listcnt > div");     //선택한 카테고리 번호 구하기
+        selectList.forEach((el, index) => {             
+        el.onclick = () => {
+            const title = CATEGORIES[index].title;
+            const id = CATEGORIES[index].id;
+            document.querySelector(".category").placeholder =  title;
+            setModalIsOpen(false);
+            closeModal();
+            console.log(title, id);
+        };
+        });
+    };
     Modal.setAppElement('#root')
 
     const CATEGORIES = [
@@ -52,14 +57,18 @@ function Mainpage() {
         { id: '06', title: "기타"},
     ];
 
+ 
+
     return (
         <S.Wrapper>
         <S.Text>작성하실 글의<br/>카테고리를 선택해주세요</S.Text>
         <input type="text" class ="category" placeholder='카테고리'onClick={() => {setModalIsOpen(true); openModal()}} />   
         <S.InputLine/>
-        <Modal isOpen={modalIsOpen} onRequestClose={() => {setModalIsOpen(false); closeModal() }}            
-         style={{                                       
-            overlay: {          //창 열렸을 때 뒷배경 흐리기
+
+
+        <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} 
+         style={{
+            overlay: {
             position: "fixed",
             top: "0",
             overflowY: "hidden",
@@ -77,13 +86,13 @@ function Mainpage() {
         },
         }}>
             <div class="listTitle">카테고리</div>
-                <div class="listcnt">
-                    <div class="li">{CATEGORIES[0].title}</div>
-                    <div class="li">{CATEGORIES[1].title}</div>
-                    <div class="li">{CATEGORIES[2].title}</div>
-                    <div class="li">{CATEGORIES[3].title}</div>
-                    <div class="li">{CATEGORIES[4].title}</div>
-                    <div class="li">{CATEGORIES[5].title}</div>  
+                <div class="listcnt"  >
+                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[0].title}</div>
+                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[1].title}</div>
+                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[2].title}</div>
+                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[3].title}</div>
+                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[4].title}</div>
+                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[5].title}</div>  
                 </div>
         </Modal>
         <S.BigButton onClick={() => (dispatch(addCategory("아무거나")))}>다음</S.BigButton>

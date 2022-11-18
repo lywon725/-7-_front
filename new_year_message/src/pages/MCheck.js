@@ -38,6 +38,7 @@ function MCheck() {
     //리덕스
     let a = useSelector((state) => { return state } )
     let dispatch = useDispatch()
+    {console.log(a.MData, "MData확인")}
 
      //렌더링이 완료될때마다 is_done false로 만들어주기
     useEffect(() => {

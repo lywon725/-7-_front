@@ -5,6 +5,8 @@ import * as S from '../styles/Majorcss';
 import "../styles/main.css"
 import tree from '../img/tree.png';
 
+import Footer from '../components/Footer/Footer';
+
 const MainButton = styled.button`
 background: #FFFFFF;
 border: 1px solid #B9ADFF;
@@ -50,7 +52,7 @@ function Mainpage() {
                     <img class="tree" src={tree} ></img>
                 </div>
 
-                <MainButton onClick={() => (window.location.href = '/nickname')}>작성하러 가기</MainButton>        
+                <MainButton onClick={() => (window.location.href = '/nickname')}>작성하러 가기</MainButton> 
             </S.Wrapper>
         </>
     )

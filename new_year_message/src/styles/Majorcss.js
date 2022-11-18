@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Text = styled.h1`
 position: left;
 text-align: left;
-margin-left: 6px;
+margin-left: 28px;
 margin-top: 50px;
 font-family: 'Pretendard';
 font-style: normal;
@@ -38,13 +38,12 @@ font-weight: 700;
 font-size: 17px;
 line-height: 12px;
 color: #8571FF;
-
 `
 export const Put = styled.input`
     width: 80%;
     height: 5%;
     position: absolute;
-    margin-left: 24px;
+    margin-left: 35px;
     left: 13px;
     top: 200px;
     border: none;
@@ -56,17 +55,16 @@ export const InputLine = styled.hr`
 height: 0.2%;
 border: 0;
 background-color: #B9ADFF;
-width: 87%;
+width: 75%;
 display: center;
 position: absolute;
-margin-left: 27px;
+margin-left 50px;
 margin-top: 100px;
 `
 
 export const Wrapper = styled.div`
 width: 400px;
-height: 1200px;
-overflow: hidden;
+overflow: visible;
 text-align: center;
 position: absolute;
 left: 50%;
