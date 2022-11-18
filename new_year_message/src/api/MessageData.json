@@ -1,0 +1,64 @@
+[
+    {
+        "id":1,
+        "nickname":"철수",
+        "text":"행복해지길 바래요.인생은 원래 행복할려고 사는거죠 긏쵸? 맞죠잉 우웅웅우우우우우웅웅웅웅웅우우우",
+        "category":"응원",
+        "title": "제목"
+    },
+    {
+        "id":2,
+        "nickname":"철수",
+        "text":"행복해지길 바래요.",
+        "category":"응원",
+        "title": "제목"
+    },
+    {
+        "id":3,
+        "nickname":"철수",
+        "text":"행복해지길 바래요.",
+        "category":"응원",
+        "title": "제목"
+    },
+    {
+        "id":4,"nickname":"철수",
+        "text":"행복해지길 바래요.",
+        "category":"좋은 글귀",
+        "title": "제목"
+    },
+    {
+        "id":5,
+        "nickname":"철수",
+        "text":"행복해지길 바래요.",
+        "category":"좋은 글귀",
+        "title": "제목"
+    },
+    {
+        "id":6,
+        "nickname":"철수",
+        "text":"행복해지길 바래요.",
+        "category":"명언",
+        "title": "제목"
+    },
+    {
+        "id":7,
+        "nickname":"철수",
+        "text":"행복해지길 바래요.",
+        "category":"반성",
+        "title": "제목"
+    },
+    {
+        "id":8,
+        "nickname":"철수",
+        "text":"행복해지길 바래요.",
+        "category":"교훈",
+        "title": "제목"
+    },
+    {
+        "id":9,
+        "nickname":"철수",
+        "text":"행복해지길 바래요.",
+        "category":"기타",
+        "title": "제목"
+    }
+]
