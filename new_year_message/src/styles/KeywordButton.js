@@ -6,7 +6,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: 306px;
-top: 511px;
+top: 380px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
@@ -22,7 +22,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: 172px;
-top: 511px;
+top: 380px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
@@ -38,7 +38,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: 37px;
-top: 511px;
+top: 380px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
@@ -55,7 +55,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: -30px;
-top: 562px;
+top: 420px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
@@ -72,7 +72,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: 105px;
-top: 562px;
+top: 420px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
@@ -89,7 +89,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: 240px;
-top: 562px;
+top: 420px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
@@ -107,7 +107,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: 37px;
-top: 613px;
+top: 460px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
@@ -123,7 +123,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: 172px;
-top: 613px;
+top: 460px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
@@ -139,7 +139,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: 306px;
-top: 613px;
+top: 460px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
@@ -155,7 +155,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: -30px;
-top: 664px;
+top: 500px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
@@ -171,7 +171,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: 105px;
-top: 664px;
+top: 500px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
@@ -187,7 +187,7 @@ position: absolute;
 width: 114px;
 height: 32px;
 left: 240px;
-top: 664px;
+top: 500px;
 
 background: #FFFFFF;
 box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);

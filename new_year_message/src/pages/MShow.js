@@ -6,6 +6,7 @@ import MessgaeCard_Left from '../components/Message/MessgaeCard_Left';
 import MessgaeCard_Right from '../components/Message/MessgaeCard_Right';
 import {useSelector, useDispatch} from "react-redux"
 import Snowman from '../img/Snowman.png';
+import Santa from '../img/Santa.png';
 //스크롤
 //import { useInView } from "react-intersection-observer"
 
@@ -15,49 +16,6 @@ import MessageData from '../api/MessageData.json';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
-const Box = styled.div`
-background: #FFFFFF;
-box-shadow: 0px 0px 15px rgba(185, 173, 255, 0.1);
-border-radius: 10px;
-width: 251px;
-position: absolute;
-margin-left: 25px;
-display:
-`
-const Content = styled.h3`
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 20px;
-color: #8571FF;
-
-text-align: left;
-padding-left: 15px;
-margin-bottom: 5px;
-
-`
-
-const Writer = styled.h4`
-
-text-align: left;
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 13px;
-color: #4B4B4B;
-margin-top: 10px;
-padding-left: 15px;
-
-`
-const Img = styled.img`
-width: 180px;
-position: absolute;
-left: 0%;
-margin-top: 20px;
-`
 const Filter = styled.button`
 border: none;
 position: absolute;
@@ -65,6 +23,7 @@ width: 65px;
 height: 30px;
 left: 300px;
 top: 91px;
+background: transparent;
 
 `
 const FilterText = styled.div`
@@ -86,16 +45,12 @@ bottom: 28.12%;
 color: #8571FF;
 
 `
-const TitleBox = styled.div`
-position: fixed;
-height: 40px;
-`
 
 const DropDownBox = styled.div`
 border: none;
 width: 70px;
 background-color: #F1F0F6;
-border: 2px solid #C8BDFF;
+border: 2px solid #8571FF;
 position: absolute;
 right: -10px;
 border-radius: 6px;
@@ -109,10 +64,40 @@ font-style: normal;
 font-weight: 600;
 font-size: 12px;
 line-height: 30px;
-color: #C8BDFF;
+color: #8571FF;
 &: hover{
-    color:#8571FF; //글자색
+    color:black; //글자색
 }
+`
+const TitleBox = styled.div`
+position: fixed;
+height: 40px;
+`
+
+const Img = styled.img`
+width: 180px;
+position: absolute;
+left: 0%;
+margin-top: 20px;
+`
+const Img2 = styled.img`
+width: 180px;
+position: absolute;
+left: 28%;
+margin-top: 100px;
+`
+const NotNewYear = styled.div`
+text-align: center;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 20px;
+color: #626262;
+
+position: absolute;
+left: 35%;
+margin-top: 300px;
 `
 
 const Padding = styled.div`
@@ -127,8 +112,11 @@ function MCheck() {
     //오늘 날짜 할당
     const day = new Date();     
     const todate = day.getDate();
-    //todate == 1 ? setNewYear(true) : setNewYear(false);
-    //console.log(todate);
+    //setNewYear함수 
+    useEffect(()=>{
+        todate >= 10 ? setNewYear(true) : setNewYear(false);
+    })
+    console.log(todate,"오늘 날짜");
 
     //api 가져오기 (드롭바 filter에 맞는.)    
     //messages = JSON.parse(MessageData).filter(m => m.category == "응원" )
@@ -169,7 +157,7 @@ function MCheck() {
             {/* 전체를 보여주려면 filter가 전체일때  */}
             {filter ==="전체" ? 
             <>
-                {MessageData.map((dum, i)=>{
+            {MessageData.map((dum, i)=>{
                 if(i%2 == 0 ){
                     return(
                         <>
@@ -214,32 +202,15 @@ function MCheck() {
             })}
             
             </> }
-            {/* {MessageData.filter(m=>m.category === filter).map((dum, i)=>{
-                if(i%2 == 0 ){
-                    return(
-                        <>
-                        <MessgaeCard_Left
-                        title={dum.title}
-                        text={dum.text}
-                        nickname={dum.nickname}
-                        />
-                        </>
-                    );
-                }else {
-                    return(
-                        <MessgaeCard_Right
-                        title={dum.title}
-                        text={dum.text}
-                        nickname={dum.nickname}
-                        />
-                    );                
-                }
-            })} */}
             <Img src={Snowman}/>
         </S.Wrapper>
     ):(
-        <>
-            <S.Text>아직 신년이 아니예요!</S.Text>
+        <>  
+            <S.Wrapper>
+            <S.Text>메시지 보기</S.Text>
+            <Img2 src={Santa}/>
+            <NotNewYear>아직 신년이 아니예요!</NotNewYear>
+            </S.Wrapper>
         </>
     );
 }
