@@ -11,6 +11,9 @@ import { Navigate } from "react-router-dom";
 //material UI
 import ReplayIcon from '@mui/icons-material/Replay';
 
+//키워드 json 데이터
+import Keyword from '../api/KeywordData.json';
+
 const TextBox = styled.div`
 position: absolute;
 width: 332px;
@@ -33,10 +36,12 @@ margin-left: 2px;
 margin-top: 24px;
 `
 
-const RePlay = styled.div`
+const RePlay = styled.button`
 position: absolute;
 left: 340px;
 top: 340px;
+border: none;
+background: transparent;
 `
 const RandomButton = styled.button`
 border: none;
@@ -74,6 +79,10 @@ function Mainpage() {
     useEffect(() => {
         dispatch(ChangeState())
     });
+
+    //keyword
+    let [i, setIndex] = useState(0)
+    
     return (
         <S.Wrapper>
         <S.Text>키워드를 활용하여 <br/>메시지를 작성해주세요</S.Text>
@@ -81,19 +90,23 @@ function Mainpage() {
             <Message value = {inputvalue} type="text" placeholder="메시지" onChange={(event)=>setinputvalue(event.target.value)}/>
         </TextBox>
         <RandomButton>랜덤</RandomButton>
-        <RePlay><ReplayIcon/></RePlay>
-        <K.KeywordBox1>아쉽다</K.KeywordBox1>
-        <K.KeywordBox2>내년에는</K.KeywordBox2>
-        <K.KeywordBox3>건강하게</K.KeywordBox3>
-        <K.KeywordBox4>나는</K.KeywordBox4>
-        <K.KeywordBox5>더 나은</K.KeywordBox5>
-        <K.KeywordBox6>행복한</K.KeywordBox6>
-        <K.KeywordBox7>사랑해</K.KeywordBox7>
-        <K.KeywordBox8>좋아해</K.KeywordBox8>
-        <K.KeywordBox9>믿을게</K.KeywordBox9>
-        <K.KeywordBox10>Happy</K.KeywordBox10>
-        <K.KeywordBox11>진짜</K.KeywordBox11>
-        <K.KeywordBox12>올해가</K.KeywordBox12>
+        <RePlay onClick={()=>(setIndex(Math.floor(Math.random()*18)))}><ReplayIcon/></RePlay>
+        {console.log(i)}
+        <K.KeywordBox1>{Keyword[i].S}</K.KeywordBox1>
+        <K.KeywordBox2>{Keyword[i+1].S}</K.KeywordBox2>
+        <K.KeywordBox3>{Keyword[i+2].S}</K.KeywordBox3>
+
+        <K.KeywordBox4>{Keyword[i].V}</K.KeywordBox4>
+        <K.KeywordBox5>{Keyword[i+1].V}</K.KeywordBox5>
+        <K.KeywordBox6>{Keyword[i+2].V}</K.KeywordBox6>
+
+        <K.KeywordBox7>{Keyword[i].O}</K.KeywordBox7>
+        <K.KeywordBox8>{Keyword[i+1].O}</K.KeywordBox8>
+        <K.KeywordBox9>{Keyword[i+2].O}</K.KeywordBox9>
+
+        <K.KeywordBox10>{Keyword[i].A}</K.KeywordBox10>
+        <K.KeywordBox11>{Keyword[i+1].A}</K.KeywordBox11>
+        <K.KeywordBox12>{Keyword[i+2].A}</K.KeywordBox12>
 
         <S.BigButton onClick={() => (dispatch(addText(inputvalue)))}>다음</S.BigButton>
         {a.user.is_done && (<Navigate to="/email"/> )}  
