@@ -48,9 +48,33 @@ let user = createSlice({
 
 export let {ChangeState,addNickname, addTitle, addCategory, addText, addEmail, addNULL} = user.actions
 
+let done
+let MData = createSlice({
+    name : 'MData',
+    initialState : [
+            {
+                nickname: 'MData',
+                title: 'MData',
+                category:'응원',
+                text:'MData',
+                email: 'MData'
+            }
+        ],
+
+        //state 추가, 변경
+        reducers:{
+            //추가하는 함수
+            addData(state, action){
+                state.push(action.payload)
+            }
+        }
+    })
+export let {addData} = MData.actions
+
 //reducer 등록
 export default configureStore({
     reducer: {
-        user : user.reducer
+        user : user.reducer,
+        MData : MData.reducer,
     }
 })
