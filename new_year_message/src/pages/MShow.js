@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import axios from 'axios';
 import styled from 'styled-components';
 import * as S from '../styles/Majorcss';
 
@@ -115,11 +116,23 @@ function MCheck() {
     //setNewYear함수 
     useEffect(()=>{
         todate >= 10 ? setNewYear(true) : setNewYear(false);
+        getDate();
     })
-    console.log(todate,"오늘 날짜");
+    //console.log(todate,"오늘 날짜");
 
-    //api 가져오기 (드롭바 filter에 맞는.)    
-    //messages = JSON.parse(MessageData).filter(m => m.category == "응원" )
+    //api 가져오기 (드롭바 filter에 맞는.)
+    const [DB, setDB]= useState([]);
+    const getDate = async()=>{
+        try{
+            const res = await axios.get(
+                'http://127.0.0.1:8000/',
+            );
+            setDB(res.data);
+            //console.log(res.data);
+        }catch(e){
+            console.log(e)
+        }
+    }
 
     //드롭바 
     const [view, setView] = useState(false);
@@ -137,12 +150,12 @@ function MCheck() {
                     {view && 
                     <DropDownBox>
                         <DropDownList onClick = {()=>{setFilter("전체")}}>전체</DropDownList>
-                        <DropDownList onClick = {()=>{setFilter("응원")}}>응원</DropDownList>
-                        <DropDownList onClick = {()=>{setFilter("좋은 글귀")}}>좋은 글귀</DropDownList>
-                        <DropDownList onClick = {()=>{setFilter("명언")}}>명언</DropDownList>
-                        <DropDownList onClick = {()=>{setFilter("반성")}}>반성</DropDownList>
-                        <DropDownList onClick = {()=>{setFilter("교훈")}}>교훈</DropDownList>
-                        <DropDownList onClick = {()=>{setFilter("기타")}}>기타</DropDownList>
+                        <DropDownList onClick = {()=>{setFilter(1)}}>응원</DropDownList>
+                        <DropDownList onClick = {()=>{setFilter(2)}}>좋은 글귀</DropDownList>
+                        <DropDownList onClick = {()=>{setFilter(3)}}>명언</DropDownList>
+                        <DropDownList onClick = {()=>{setFilter(4)}}>반성</DropDownList>
+                        <DropDownList onClick = {()=>{setFilter(5)}}>교훈</DropDownList>
+                        <DropDownList onClick = {()=>{setFilter(6)}}>기타</DropDownList>
                     </DropDownBox>}
                     
                 </Filter>
@@ -160,7 +173,7 @@ function MCheck() {
             {filter ==="전체" ? 
             <>
             {/* JSON데이터 일때는 a 말고 MessageData */}
-            {a.map((dum, i)=>{
+            {DB.map((dum, i)=>{
                 if(i%2 == 0 ){
                     return(
                         <>
@@ -182,7 +195,7 @@ function MCheck() {
                 }
             })}
             </> : <>    
-            {a.filter(m=>m.category === filter).map((dum, i)=>{
+            {DB.filter(m=>m.category === filter).map((dum, i)=>{
                 if(i%2 == 0 ){
                     return(
                         <>

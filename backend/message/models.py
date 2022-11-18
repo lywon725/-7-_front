@@ -1,0 +1,21 @@
+from django.db import models
+import datetime
+
+# Create your models here.
+
+class Category(models.Model):
+    category = models.CharField(max_length=10)
+    
+    def __str__(self):
+        return self.category
+
+class Text(models.Model):
+    nickname = models.CharField(max_length=10)
+    title = models.CharField(max_length=30)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    text = models.TextField()
+    email = models.EmailField()
+    created_at = models.DateTimeField(default=datetime.date.today, null=True)
+
+    def __str__(self):
+        return self.nickname
