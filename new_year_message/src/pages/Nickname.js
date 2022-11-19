@@ -8,6 +8,7 @@ import {useSelector, useDispatch} from "react-redux"
 import {addNickname, ChangeState} from '../redux/store'
 import { Navigate } from "react-router-dom";
 
+
 function Mainpage() {
     const [inputvalue, setinputvalue] = useState('')
 
@@ -22,9 +23,11 @@ function Mainpage() {
     return (
         <S.Wrapper>
             {console.log(a.user)}
-            <S.Text>닉네임을 입력해주세요 <br/> .</S.Text>
+            <S.Text>닉네임을 입력해주세요</S.Text>
+            <div class="margin">
             <S.Put value = {inputvalue} type="text" placeholder="닉네임" onChange={(event)=>setinputvalue(event.target.value)}/>
             <S.InputLine/>
+            </div>
             <S.BigButton onClick={() => (dispatch(addNickname(inputvalue)))}>다음</S.BigButton>
             {a.user.is_done && (<Navigate to="/title"/> )}  
         </S.Wrapper>
