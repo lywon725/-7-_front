@@ -10,11 +10,11 @@ class Category(models.Model):
         return self.category
 
 class Text(models.Model):
-    nickname = models.CharField(max_length=10)
-    title = models.CharField(max_length=30)
+    nickname = models.CharField(max_length=10,null=True, blank=True)
+    title = models.CharField(max_length=30,null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
     text = models.TextField()
-    email = models.CharField(max_length=30)
+    email = models.CharField(max_length=30,null=True, blank=True)
 
     def __str__(self):
         return self.nickname
