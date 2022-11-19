@@ -33,6 +33,7 @@ color: #8571FF;
 
 
 function Mainpage() {
+    
 
     const [DB, setDB]= useState([]);
     const getDate = async()=>{
@@ -49,9 +50,10 @@ function Mainpage() {
         
     const cnt = DB.length;
     const per = cnt * 10;
-    console.log(cnt);
+
     document.querySelector(".countP").innerHTML = cnt;
     document.querySelector(".progress-level").style.width = per + "%";
+
     }
     return (
         <>
@@ -61,12 +63,12 @@ function Mainpage() {
                     <br/>응원의 메시지를 
                     <br/>작성해주세요 🍀
                 </S.Text>
-                <div class="progress" onWaiting={getDate()}>
-                    <div class="progress-level" ></div>
+                <div class="progress">
+                    <div class="progress-level" onBeforeInputCapture={getDate()} ></div>
                 </div>
                 <S.textP>
                     현재 작성된 메시지 총&nbsp;
-                    <p class="countP">100</p>
+                    <p class="countP">&nbsp;</p>
                     개
                 </S.textP>
                 <div>

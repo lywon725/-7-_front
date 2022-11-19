@@ -66,7 +66,7 @@ function Mainpage() {
         <S.InputLine/>
 
 
-        <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} 
+        <Modal isOpen={modalIsOpen}  onRequestClose={() => setModalIsOpen(false)} 
         style={{
             overlay: {
             position: "fixed",
@@ -81,10 +81,10 @@ function Mainpage() {
                 transform: "translate(-51.8%)",
                 width: "335px",
                 height: "270px",
-                borderRadius: "25px 25px 0 0",
+                borderRadius: "25px 25px 0 0", 
 
         },
-        }}>
+        }} >
             <div class="listTitle">카테고리</div>
                 <div class="listcnt"  >
                     <div class="li" onClickCapture={() => {select(); setCate(1)}}>{CATEGORIES[0].title}</div>
