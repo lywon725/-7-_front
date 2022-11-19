@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef, useCallback} from 'react'
 import styled from 'styled-components';
 import * as S from '../styles/Majorcss';
 import "../styles/main.css"
@@ -11,6 +11,7 @@ import ginger1 from '../img/Gingerbread.png';
 import ginger2 from '../img/Gingerbread2.png';
 
 import axios from 'axios';
+import moment from "moment";
 
 const MainButton = styled.button`
 background: #FFFFFF;
@@ -35,6 +36,7 @@ line-height: 12px;
 color: #8571FF;
 
 `
+
 
 function MCheck() {
     //리덕스
@@ -61,23 +63,57 @@ function MCheck() {
         
         
     const cnt = DB.length;
-    const per = cnt * 10;
+    const per = cnt * 2;
     console.log(cnt);
     document.querySelector(".countP").innerHTML = cnt;
     document.querySelector(".progress-level").style.width = per + "%";
     }
+    const countDownTimer = useCallback((date) => {
+        let _vDate = moment(date);
+        let _second = 1000;
+        let _minute = _second * 60;
+        let _hour = _minute * 60;
+        let _day = _hour * 24;
+        let timer;
+
+        function showRemaining() {
+            try {
+                let now = moment();
+                let distDt = _vDate - now;
+
+                if (distDt < 0) {
+                    clearInterval(timer);
+                    let HapDate = '0' + '일 ' + '0' + '시간 ' + '0' + '분 ' + '0' + '초 :)';
+                    document.getElementById('timer').innerHTML = HapDate;
+                    return;
+                }
+                let days = Math.floor(distDt / _day);
+                let hours = Math.floor((distDt % _day) / _hour);
+                let minutes = Math.floor((distDt % _hour) / _minute);
+                let seconds = Math.floor((distDt % _minute) / _second);
+
+                let HapDate = parseInt(days) + '일 ' + parseInt(hours) + '시간 ' + parseInt(minutes) + '분 ' + parseInt(seconds) + '초:)';
+                document.getElementById('timer').innerHTML = HapDate;
+            }
+            catch (e) {
+                console.log(e);
+            }
+        }
+        timer = setInterval(showRemaining, 1000);
+    }, []);
+
 
     return (
         <S.Wrapper>
-        <S.Text>메시지 확인까지 <br/>13시간 12분 15초 남았어요!</S.Text>
+        <S.Text>메시지 확인까지 <div id="timer">{countDownTimer('2023-01-01')}</div></S.Text>
         <div class="margin">
-        <div class="progress" onWaiting={getDate()}>
+        <div class="progress"  onBeforeInputCapture={getDate()}>
             <div class="progress-level" ></div>
         </div>
         </div>
         <S.textP>
             현재 작성된 메시지 총&nbsp;
-            <p class="countP">100</p>
+            <p class="countP">&nbsp;</p>
             개
         </S.textP>
         <div>
