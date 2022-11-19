@@ -49,7 +49,7 @@ function Mainpage() {
         
         
     const cnt = DB.length;
-    const per = cnt * 10;
+    const per = cnt * 2;
 
     document.querySelector(".countP").innerHTML = cnt;
     document.querySelector(".progress-level").style.width = per + "%";
