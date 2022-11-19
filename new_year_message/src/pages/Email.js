@@ -7,6 +7,20 @@ import {useSelector, useDispatch} from "react-redux"
 import {addEmail, ChangeState} from '../redux/store'
 import { Navigate } from "react-router-dom";
 
+const Text = styled.div`
+display: inline-block;
+position: left;
+text-align: left;
+margin-left: 3px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 30px;
+letter-spacing: 0.035em;
+
+color: #8571FF;
+`
 
 function Mainpage() {
     const [inputvalue, setinputvalue] = useState('')
@@ -23,7 +37,8 @@ function Mainpage() {
     return (
         <S.Wrapper>
         {console.log(a.user)}
-        <S.Text>이메일 주소를 적어주세요 <br/> . </S.Text>
+        <S.Text>이메일 주소를 적어주세요</S.Text>
+        <Text>2023.01.01이 되면, 알람을 보내드릴게요.</Text>
         <S.Put value = {inputvalue} type="text" placeholder="이메일 주소" onChange={(event)=>setinputvalue(event.target.value)}/>
         <S.InputLine/>
         <S.BigButton onClick={() => (dispatch(addEmail(inputvalue)))}>다음</S.BigButton>

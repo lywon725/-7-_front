@@ -1,9 +1,10 @@
 
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components';
 import * as S from '../styles/Majorcss';
 import "../styles/main.css"
 import tree from '../img/tree.png';
+import axios from 'axios';
 
 import Footer from '../components/Footer/Footer';
 
@@ -32,6 +33,26 @@ color: #8571FF;
 
 
 function Mainpage() {
+
+    const [DB, setDB]= useState([]);
+    const getDate = async()=>{
+        try{
+            const res = await axios.get(
+                'http://127.0.0.1:8000/',
+            );
+            setDB(res.data);
+            //console.log(res.data);
+        }catch(e){
+            console.log(e)
+        }
+        
+        
+    const cnt = DB.length;
+    const per = cnt * 10;
+    console.log(cnt);
+    document.querySelector(".countP").innerHTML = cnt;
+    document.querySelector(".progress-level").style.width = per + "%";
+    }
     return (
         <>
             <S.Wrapper>
@@ -40,7 +61,7 @@ function Mainpage() {
                     <br/>응원의 메시지를 
                     <br/>작성해주세요 🍀
                 </S.Text>
-                <div class="progress">
+                <div class="progress" onWaiting={getDate()}>
                     <div class="progress-level" ></div>
                 </div>
                 <S.textP>
