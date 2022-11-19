@@ -50,7 +50,7 @@
     width: 310px;
     height: 5%;
     position: absolute;
-    margin-left: 24px;
+    margin-left: 38px;
     left: 13px;
     top: 200px;
     border: none;
@@ -60,7 +60,7 @@
     background-image: url("../img/Vector.png");
     background-repeat: no-repeat;
     background-position: 290px center;
-
+    outline: none;
 }
 
 .listTitle {

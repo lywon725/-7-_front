@@ -11,7 +11,7 @@ const Text = styled.div`
 display: inline-block;
 position: left;
 text-align: left;
-margin-left: 3px;
+margin-left: 0px;
 font-family: 'Pretendard';
 font-style: normal;
 font-weight: 500;
