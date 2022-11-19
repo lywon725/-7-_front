@@ -7,6 +7,7 @@ import {useSelector, useDispatch} from "react-redux"
 import {ChangeState, addData, addNULL} from '../redux/store'
 import { Navigate } from "react-router-dom";
 import letter from '../img/Letter.png';
+import axios from 'axios';
 
 const Letter = styled.img`
     width: 218px;
@@ -59,6 +60,27 @@ function Mainpage() {
     useEffect(() => {
         dispatch(ChangeState())
     });
+    
+
+    const giveMessage = async () =>{
+        await axios
+        .post('http://127.0.0.1:8000/',
+        {
+        nickname: a.user.nickname,
+        title: a.user.title,
+        category:a.user.category,
+        text: a.user.text,
+        email: a.user.email
+        }
+        )
+        .then((response) => {
+        console.log(response);
+        // setIsLoggedIn(true);
+        })
+        .catch((error) => {
+        console.log(error);
+        });
+    }
 
     return (
         <S.Wrapper>

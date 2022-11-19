@@ -132,6 +132,8 @@ function MCheck() {
         }catch(e){
             console.log(e)
         }
+    const cnt = DB.length;
+    console.log(cnt);
     }
 
     //드롭바 
