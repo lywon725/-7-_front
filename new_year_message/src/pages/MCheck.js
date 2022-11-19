@@ -10,6 +10,8 @@ import { Navigate } from "react-router-dom";
 import ginger1 from '../img/Gingerbread.png';
 import ginger2 from '../img/Gingerbread2.png';
 
+import axios from 'axios';
+
 const MainButton = styled.button`
 background: #FFFFFF;
 border: 1px solid #B9ADFF;
@@ -44,11 +46,32 @@ function MCheck() {
     useEffect(() => {
         dispatch(ChangeState())
     });
+
+    const [DB, setDB]= useState([]);
+    const getDate = async()=>{
+        try{
+            const res = await axios.get(
+                'http://127.0.0.1:8000/',
+            );
+            setDB(res.data);
+            //console.log(res.data);
+        }catch(e){
+            console.log(e)
+        }
+        
+        
+    const cnt = DB.length;
+    const per = cnt * 10;
+    console.log(cnt);
+    document.querySelector(".countP").innerHTML = cnt;
+    document.querySelector(".progress-level").style.width = per + "%";
+    }
+
     return (
         <S.Wrapper>
         <S.Text>메시지 확인까지 <br/>13시간 12분 15초 남았어요!</S.Text>
         <div class="margin">
-        <div class="progress">
+        <div class="progress" onWaiting={getDate()}>
             <div class="progress-level" ></div>
         </div>
         </div>
