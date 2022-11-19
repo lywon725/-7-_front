@@ -8,7 +8,7 @@ let user = createSlice({
             is_done : false,
             nickname: '김철수',
             title: 'happy new year!',
-            category:'응원',
+            category:1,
             text:'모두 행복했으면 좋겠어요.',
             email: '123@gamail.com',
             something: ' '
@@ -45,7 +45,7 @@ let user = createSlice({
 
         },
         plusText(state, action){
-            state.text = state.text + action.payload
+            state.text = state.text + action.payload +' '
         },
         resetText(  state, action){
             state.text = ''

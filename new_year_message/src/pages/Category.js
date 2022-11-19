@@ -16,7 +16,7 @@ function Mainpage() {
     //리덕스
     let a = useSelector((state) => { return state } )
     let dispatch = useDispatch()
-    
+    console.log(a,"확인")
      //렌더링이 완료될때마다 is_done false로 만들어주기
     useEffect(() => {
         dispatch(ChangeState())
@@ -30,19 +30,19 @@ function Mainpage() {
         document.body.style.overflow = "unset";
         
     };
-    
-    
-    
+    let id
+    const [i, setCate] = useState(1);
     const select = () => {
         const selectList = document.querySelectorAll(".listcnt > div");     //선택한 카테고리 번호 구하기
         selectList.forEach((el, index) => {             
         el.onclick = () => {
             const title = CATEGORIES[index].title;
-            const id = CATEGORIES[index].id;
+            id = CATEGORIES[index].id;
             document.querySelector(".category").placeholder =  title;
             setModalIsOpen(false);
             closeModal();
-            console.log(title, id);
+            //setCate(id);
+            console.log(id, "확인아요");
         };
         });
     };
@@ -57,7 +57,7 @@ function Mainpage() {
         { id: '06', title: "기타"},
     ];
 
- 
+
 
     return (
         <S.Wrapper>
@@ -67,7 +67,7 @@ function Mainpage() {
 
 
         <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} 
-         style={{
+        style={{
             overlay: {
             position: "fixed",
             top: "0",
@@ -87,17 +87,17 @@ function Mainpage() {
         }}>
             <div class="listTitle">카테고리</div>
                 <div class="listcnt"  >
-                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[0].title}</div>
-                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[1].title}</div>
-                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[2].title}</div>
-                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[3].title}</div>
-                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[4].title}</div>
-                    <div class="li" onClickCapture={() => {select()}}>{CATEGORIES[5].title}</div>  
+                    <div class="li" onClickCapture={() => {select(); setCate(1)}}>{CATEGORIES[0].title}</div>
+                    <div class="li" onClickCapture={() => {select(); setCate(2)}}>{CATEGORIES[1].title}</div>
+                    <div class="li" onClickCapture={() => {select(); setCate(3)}}>{CATEGORIES[2].title}</div>
+                    <div class="li" onClickCapture={() => {select(); setCate(4)}}>{CATEGORIES[3].title}</div>
+                    <div class="li" onClickCapture={() => {select(); setCate(5)}}>{CATEGORIES[4].title}</div>
+                    <div class="li" onClickCapture={() => {select(); setCate(6)}}>{CATEGORIES[5].title}</div>  
                 </div>
         </Modal>
-        <S.BigButton onClick={() => (dispatch(addCategory("아무거나")))}>다음</S.BigButton>
+        <S.BigButton onClick={() => (dispatch(addCategory(i)))}>다음</S.BigButton>
         {a.user.is_done && (<Navigate to="/keyword"/> )}  
-        
+        {console.log(id,"황인")}
         </S.Wrapper>
 
     );
