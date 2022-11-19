@@ -80,4 +80,3 @@ function Mainpage() {
 }
 
 export default Mainpage
-
