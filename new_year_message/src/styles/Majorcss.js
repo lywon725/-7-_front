@@ -50,6 +50,7 @@ export const Put = styled.input`
     background: transparent;
     font-size: 17px;
     font-color: #BFC2CA;
+    outline: none;
 `
 export const InputLine = styled.hr`
 height: 0.2%;
@@ -59,7 +60,7 @@ width: 75%;
 display: center;
 position: absolute;
 margin-left 50px;
-margin-top: 100px;
+margin-top: 80px;
 `
 
 export const Wrapper = styled.div`

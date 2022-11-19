@@ -23,7 +23,7 @@ top: 160px;
 
 background: #F8F9FF;
 /* light purple */
-
+font-family: 'Pretendard';
 border: 1px solid #B9ADFF;
 border-radius: 17.5132px;
 z-index:0;
