@@ -19,3 +19,6 @@ class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAdminUser]
     queryset = Category.objects.all()
     lookup_field ='id'
+
+
+    

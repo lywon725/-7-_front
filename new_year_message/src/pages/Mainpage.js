@@ -35,6 +35,7 @@ color: #8571FF;
 function Mainpage() {
 
     const [DB, setDB]= useState([]);
+    
     const getDate = async()=>{
         try{
             const res = await axios.get(
