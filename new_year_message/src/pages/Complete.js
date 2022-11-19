@@ -1,4 +1,6 @@
 import React, {useState,useEffect} from 'react'
+import axios from 'axios';
+
 import styled from 'styled-components';
 import * as S from '../styles/Majorcss';
 
@@ -7,7 +9,6 @@ import {useSelector, useDispatch} from "react-redux"
 import {ChangeState, addData, addNULL} from '../redux/store'
 import { Navigate } from "react-router-dom";
 import letter from '../img/Letter.png';
-import axios from 'axios';
 
 const Letter = styled.img`
     width: 218px;
@@ -54,8 +55,9 @@ function Mainpage() {
     let a = useSelector((state) => { return state } )
     let dispatch = useDispatch()
 
-    let Data
+    
 
+    //console.log(Data, "황긴")
      //렌더링이 완료될때마다 is_done false로 만들어주기
     useEffect(() => {
         dispatch(ChangeState())
@@ -63,20 +65,22 @@ function Mainpage() {
 
     
 
-    const giveMessage = async () =>{
+    
+
+
+
+    const giveMessage = async (e) =>{
         await axios
         .post('http://127.0.0.1:8000/',
-        {
-        nickname: a.user.nickname,
-        title: a.user.title,
-        category:a.user.category,
-        text: a.user.text,
-        email: a.user.email
+        {   nickname: a.user.nickname,
+            title: a.user.title,
+            text: a.user.text,
+            email: a.user.email,
+            category:a.user.category,
         }
         )
         .then((response) => {
         console.log(response);
-        // setIsLoggedIn(true);
         })
         .catch((error) => {
         console.log(error);
@@ -88,20 +92,15 @@ function Mainpage() {
         <S.Text>메시지 작성이 완료되었어요!</S.Text>
         {/* 저장된 state store.js 추가하기 */}
         {/* {Data.push(a.user.nickname)} */}
+
         <Letter src={letter}></Letter>
         <Text>작성해주신 메시지는 
         <br/> 2023..01.01이 되어야 확인 가능합니다.
         <br/>잊지 말고 메시지를 확인하러 와주세요:)</Text>
         
-        <BigButton onClick={() => {(dispatch(addData(
-            {
-            nickname: a.user.nickname,
-            title: a.user.title,
-            category:a.user.category,
-            text: a.user.text,
-            email: a.user.email
-            }
-        )));dispatch(addNULL("웅"));}}>다음</BigButton>
+        
+        <BigButton onClick={() => {giveMessage();dispatch(addNULL("웅"));}}>다음</BigButton>
+
         {/* 다음버튼 누르고 추가가 되면 네이게이트 실행 */}
         {a.user.is_done && (<Navigate to="/MCheck"/> )} 
         {console.log(a.MData, "MData")}

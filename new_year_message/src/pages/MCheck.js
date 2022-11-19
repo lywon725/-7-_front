@@ -71,7 +71,7 @@ function MCheck() {
         <S.Wrapper>
         <S.Text>메시지 확인까지 <br/>13시간 12분 15초 남았어요!</S.Text>
         <div class="margin">
-        <div class="progress">
+        <div class="progress" onWaiting={getDate()}>
             <div class="progress-level" ></div>
         </div>
         </div>

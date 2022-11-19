@@ -74,8 +74,8 @@ color: #4B4B4B;
 const SelectText = styled.div`
 position: absolute;
 margin-top: 40px;
-width: 80%;
-margin-left: 32px;
+width: 75%;
+margin-left: 41px;
 z-index: 3;
 `
 function Mainpage() {
@@ -83,6 +83,7 @@ function Mainpage() {
     //리덕스
     let a = useSelector((state) => { return state } )
     let dispatch = useDispatch()
+    console.log(a.user,"확인!!!!")
 
      //렌더링이 완료될때마다 is_done false로 만들어주기
     useEffect(() => {
@@ -93,14 +94,12 @@ function Mainpage() {
     let [i, setIndex] = useState(0)
     const [text, setText] = useState('')
     let message = ''
-    const MakeMessage = () => {
-        
-    }
+    
     return (
         <S.Wrapper>
         <S.Text>키워드를 활용하여 <br/>메시지를 작성해주세요</S.Text>
         <TextBox>
-            <Message value = {inputvalue} type="text" placeholder="메시지" onChange={(event)=>setinputvalue(event.target.value)}/>
+            {/* <Message value = {inputvalue} type="text" placeholder="메시지" onChange={(event)=>setinputvalue(event.target.value)}/> */}
             <p> {message}</p>
         </TextBox>
 
@@ -123,7 +122,7 @@ function Mainpage() {
         <K.KeywordBox12 onClick={()=>{dispatch(plusText(Keyword[i+2].A))}}>{Keyword[i+2].A}</K.KeywordBox12>
 
         <SelectText>{a.user.text}</SelectText>
-        <S.BigButton onClick={() => (dispatch(addText(inputvalue)))}>다음</S.BigButton>
+        <S.BigButton onClick={() => (dispatch(addText(a.user.text)))}>다음</S.BigButton>
         {a.user.is_done && (<Navigate to="/email"/> )}  
         </S.Wrapper>
     )
