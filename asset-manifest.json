@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/MapleHackathon_front/static/css/main.3f1a6cc9.css",
+    "main.js": "/MapleHackathon_front/static/js/main.23ae2e73.js",
+    "static/js/787.29b37137.chunk.js": "/MapleHackathon_front/static/js/787.29b37137.chunk.js",
+    "static/media/Santa.png": "/MapleHackathon_front/static/media/Santa.89290bdf8343e538d39c.png",
+    "static/media/Snowman.png": "/MapleHackathon_front/static/media/Snowman.b251e10e11d8ab8c3dbf.png",
+    "static/media/Letter.png": "/MapleHackathon_front/static/media/Letter.fa827b9d1bb2fc153a38.png",
+    "static/media/tree.png": "/MapleHackathon_front/static/media/tree.22a18ed9dfa3658e55fe.png",
+    "static/media/Gingerbread.png": "/MapleHackathon_front/static/media/Gingerbread.2a5b8b01c38201dab9d6.png",
+    "static/media/Gingerbread2.png": "/MapleHackathon_front/static/media/Gingerbread2.56ce748592cf58646517.png",
+    "index.html": "/MapleHackathon_front/index.html",
+    "main.3f1a6cc9.css.map": "/MapleHackathon_front/static/css/main.3f1a6cc9.css.map",
+    "main.23ae2e73.js.map": "/MapleHackathon_front/static/js/main.23ae2e73.js.map",
+    "787.29b37137.chunk.js.map": "/MapleHackathon_front/static/js/787.29b37137.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3f1a6cc9.css",
+    "static/js/main.23ae2e73.js"
+  ]
+}
